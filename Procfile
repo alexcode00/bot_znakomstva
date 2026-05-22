@@ -1,1 +1,1 @@
-worker: python telebot/app.py
+worker: python -m telebot.app
