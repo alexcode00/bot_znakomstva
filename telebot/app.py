@@ -6,8 +6,9 @@ import os
 from dotenv import load_dotenv
 from telebot.database import db
 load_dotenv()
-
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+import sys
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 async def main():
     bot = Bot(token=os.getenv("BOT_TOKEN"))
