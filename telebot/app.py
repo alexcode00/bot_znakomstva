@@ -15,7 +15,6 @@ if sys.platform == "win32":
 async def main():
     bot = Bot(token=os.getenv("BOT_TOKEN"))
     dp = Dispatcher()
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     for router in routers:
         dp.include_router(router)
     await db.connect()
