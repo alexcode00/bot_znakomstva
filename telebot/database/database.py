@@ -6,6 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 db_name = os.getenv("DB_NAME")
 db_password = os.getenv("DB_PASSWORD")
+db_user = os.getenv("DB_USER")
+db_host = os.getenv("DB_HOST")
+db_port = os.getenv("DB_PORT")
+
+
+
+
 class Database:
     def __init__(self):
         self.conn = None
@@ -13,9 +20,9 @@ class Database:
     async def connect(self):
         self.conn = await psycopg.AsyncConnection.connect(
             dbname=db_name,
-            user="postgres",
+            user=db_user,
             password=db_password,
-            host="127.0.0.1",
+            host=db_host,
             port=5432
         )
         await self.create_tables()
