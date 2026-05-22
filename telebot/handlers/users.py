@@ -3,11 +3,11 @@ from aiogram import F, Router
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
-from typing_inspection.typing_objects import target
 
-from telebot.database import db
-from telebot.states import Reg
-import telebot.keyboards as kb
+
+from database import db
+from states import Reg
+import keyboards as kb
 from aiogram.filters.logic import or_f
 
 router = Router()

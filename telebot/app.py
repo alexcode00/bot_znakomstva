@@ -1,13 +1,13 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 import logging
-from telebot.handlers import routers
+from handlers import routers
 import os
 from dotenv import load_dotenv
-from telebot.database import db
+from database import db
 load_dotenv()
 import sys
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
