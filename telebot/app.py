@@ -1,10 +1,10 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 import logging
-from handlers import routers
+from telebot.handlers import routers
 import os
 from dotenv import load_dotenv
-from database import db
+from telebot.database import db
 load_dotenv()
 import sys
 
